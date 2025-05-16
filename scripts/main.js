@@ -74,6 +74,7 @@ button.addEventListener('click', () => {
   }
 
   const student = studentsSubjects.find(data => data.name.toLowerCase() === selectedStudent.toLowerCase());
+  const subjectData = studentsSubjects.find(data => data.subjects.name.toLowerCase() === selectedSubject.toLowerCase());
 
   if (!student) {
     result.textContent = 'Student not found.';
