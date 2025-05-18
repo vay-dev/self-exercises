@@ -62,7 +62,7 @@ const studentsSubjects = [
 ];
 
 const button = document.getElementById('button');
-const result = document.querySelector('.result');  // This now properly selects the <p class="result"></p>
+const result = document.querySelector('.result'); 
 
 button.addEventListener('click', () => {
   const selectedStudent = document.getElementById('studentname').value;
@@ -70,17 +70,22 @@ button.addEventListener('click', () => {
 
   if (!selectedStudent || !selectedSubject) {
     result.textContent = 'Please select both a student and a subject.';
+    setTimeout(() => {
+      result.textContent = '';
+    }, 2000);
     return;
   }
 
   const student = studentsSubjects.find(data => data.name.toLowerCase() === selectedStudent.toLowerCase());
-  const subjectData = studentsSubjects.find(data => data.subjects.name.toLowerCase() === selectedSubject.toLowerCase());
 
   if (!student) {
     result.textContent = 'Student not found.';
     return;
   }
 
+  const subjectData = student.subjects.find(
+    subject => subject.name.toLowerCase() === selectedSubject.toLowerCase()
+  );
 
   if (!subjectData) {
     result.textContent = 'Subject not found for this student.';

@@ -28,3 +28,11 @@ h1 {
   text-transform: uppercase;
   font-size: 25px;
 }
+
+.result {
+  font-weight: bold;
+  color: orangered;
+  text-transform: capitalize;
+  font-size: 20px;
+  transition: .3s ease-in-out;
+}
