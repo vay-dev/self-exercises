@@ -3,16 +3,16 @@ const studentsSubjects = [
     { name: 'Maths', score: 85 },
     { name: 'English', score: 90 },
     { name: 'Chemistry', score: 75 },
-    { name: 'Biology', score: 80 }
+    { name: 'Biology', score: 45 } 
   ] },
   { name: 'Olivia Garcia', subjects: [
     { name: 'Maths', score: 92 },
     { name: 'English', score: 88 },
-    { name: 'Chemistry', score: 79 },
+    { name: 'Chemistry', score: 49 }, 
     { name: 'Biology', score: 82 }
   ] },
   { name: 'Noah Smith', subjects: [
-    { name: 'Maths', score: 78 },
+    { name: 'Maths', score: 48 }, 
     { name: 'English', score: 85 },
     { name: 'Chemistry', score: 90 },
     { name: 'Biology', score: 76 }
@@ -31,14 +31,14 @@ const studentsSubjects = [
   ] },
   { name: 'John Brown', subjects: [
     { name: 'Maths', score: 76 },
-    { name: 'English', score: 80 },
+    { name: 'English', score: 42 }, 
     { name: 'Chemistry', score: 70 },
     { name: 'Biology', score: 72 }
   ] },
   { name: 'John Davis', subjects: [
     { name: 'Maths', score: 80 },
     { name: 'English', score: 82 },
-    { name: 'Chemistry', score: 75 },
+    { name: 'Chemistry', score: 40 }, 
     { name: 'Biology', score: 79 }
   ] },
   { name: 'Olivia Martinez', subjects: [
@@ -56,10 +56,11 @@ const studentsSubjects = [
   { name: 'Sarah Rodriguez', subjects: [
     { name: 'Maths', score: 85 },
     { name: 'English', score: 83 },
-    { name: 'Chemistry', score: 79 },
+    { name: 'Chemistry', score: 33 }, 
     { name: 'Biology', score: 88 }
   ] }
 ];
+
 
 const button = document.getElementById('button');
 const result = document.querySelector('.result'); 
@@ -80,6 +81,9 @@ button.addEventListener('click', () => {
 
   if (!student) {
     result.textContent = 'Student not found.';
+     setTimeout(() => {
+      result.textContent = '';
+    }, 2000);
     return;
   }
 
@@ -89,12 +93,21 @@ button.addEventListener('click', () => {
 
   if (!subjectData) {
     result.textContent = 'Subject not found for this student.';
+     setTimeout(() => {
+      result.textContent = '';
+    }, 2000);
     return;
   }
 
   if (subjectData.score <= 50) {
-    result.textContent = `${selectedStudent} failed ${selectedSubject}.`;
+    result.textContent = `${selectedStudent} ❎failed ${selectedSubject}.`;
+     setTimeout(() => {
+      result.textContent = '';
+    }, 2000);
   } else {
-    result.textContent = `${selectedStudent} passed ${selectedSubject}.`;
+    result.textContent = `${selectedStudent} ✅passed ${selectedSubject}.`;
+     setTimeout(() => {
+      result.textContent = '';
+    }, 2000);
   }
 });
