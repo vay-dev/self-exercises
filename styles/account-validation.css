@@ -27,7 +27,16 @@ body {
   background: #ffffff;
 }
 
-#select {
+.input__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-block-start: 10px;
+}
+
+.input__wrapper input {
   margin-bottom: 15px;
   padding: 5px;
   border-radius: 7px;
@@ -36,6 +45,12 @@ body {
   font-size: 15px;
   border: 1px solid #16a085;
   color: #2c3e50;
+}
+
+.input__wrapper input::placeholder {
+  color: #ccc;
+  font-weight: bold;
+  text-align: center;
 }
 
 #output {

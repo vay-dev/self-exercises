@@ -6,6 +6,8 @@
   <title>Account Verification</title>
   <link rel="stylesheet" href="styles/general/general-header.css">
   <link rel="stylesheet" href="styles/account-validation.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
 
@@ -19,22 +21,15 @@
   </h1>
   
   <div class="container">
-    <select id="select">
-      <option value="" selected disabled>-- Select Username --</option>
-      <option value="johnnydoe">johnnydoe</option>
-      <option value="emilys">emilys</option>
-      <option value="mikebrown">mikebrown</option>
-      <option value="sarawilson">sarawilson</option>
-      <option value="davidlee">davidlee</option>
-      <option value="angelaj">angelaj</option>
-      <option value="kevinw">kevinw</option>
-      <option value="natalieb">natalieb</option>
-      <option value="janedoe">janedoe</option>
-      <option value="alexsmith">alexsmith</option>
-      <option value="tinasnow">tinasnow</option>
-   </select>
 
-   <button id="submit" type="button">Submit</button>
+    <div class="title"><h1>Login</h1></div>
+
+    <div class="input__wrapper">
+      <input type="text" placeholder="Type Your Username" id="select">
+      <input type="password" placeholder="Type Your Password" id="password">
+    </div>
+
+   <button id="submit" type="button"><i class="fas fa-right-to-bracket"></i></button>
 
    <p id="output"></p>
 

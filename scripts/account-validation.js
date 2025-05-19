@@ -40,9 +40,10 @@ const data = [
 function login() {
   const user = document.getElementById('select').value;
   const displayElement = document.getElementById('output');
+  const password = document.querySelector('#password').value;
 
-  if (!user) {
-    displayElement.textContent = 'Please select a user';
+  if (!user || !password) {
+    displayElement.textContent = 'Please Select Type In Both A Username And A Password';
     setTimeout(() => {
       displayElement.textContent = '';
     }, (1500));
@@ -52,7 +53,7 @@ function login() {
 
   const matchingUser = data.find(d => d.username.toLowerCase() === user.toLowerCase());
 
-  if (!matchingUser) {
+  if (!matchingUser || matchingUser.password !== password.toLowerCase()) {
     displayElement.textContent = "sorry user not found"
     setTimeout(() => {
       displayElement.textContent = '';
@@ -66,3 +67,9 @@ function login() {
 };
 
 document.getElementById('submit').addEventListener('click', login);
+document.addEventListener('keydown', (event) => {
+  // console.log(`user pressed the "${event.key}" key`);
+  if (event.key === 'Enter') {
+    login();
+  }
+})
